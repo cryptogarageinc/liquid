@@ -617,7 +617,7 @@ UniValue createrawtransaction(const JSONRPCRequest& request)
             rawTx.vout.push_back(out);
         } else if (name_ == "burn") {
             CScript datascript = CScript() << OP_RETURN;
-            CAmount nAmount = AmountFromValue(outputs[name_]);
+            CAmount nAmount = AmountFromValue(sendTo[name_]);
             CTxOut out(asset, nAmount, datascript);
             rawTx.vout.push_back(out);
         } else {
